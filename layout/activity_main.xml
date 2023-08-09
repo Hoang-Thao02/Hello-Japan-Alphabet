@@ -1,0 +1,1415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/Hira"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hiragana"
+        android:textColor="#C81552"
+        android:textSize="34dp"
+        android:alpha="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.458"
+        app:layout_constraintVertical_bias="0.017" />
+
+    <Button
+        android:id="@+id/btnHira"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom|right"
+        android:text="Hiragana"
+        android:textColor="#101010"
+        android:textSize="13.5dp"
+        android:onClick="moveToHira"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.616"
+        app:layout_constraintVertical_bias="0.98" />
+
+    <Button
+        android:id="@+id/btnKata"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom|right"
+        android:layout_marginStart="0dp"
+        android:onClick="moveToKata"
+        android:text="Katakana"
+        android:textColor="#101010"
+        android:textSize="13.5dp"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="@+id/btnHira"
+        app:layout_constraintStart_toEndOf="@+id/btnHira"
+        app:layout_constraintTop_toTopOf="@+id/btnHira" />
+
+    <ScrollView
+        android:id="@+id/viewHira"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Hira"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintVertical_bias="0.75">
+
+        <androidx.gridlayout.widget.GridLayout
+            android:id="@+id/layoutHira"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:alignmentMode="alignMargins"
+            android:paddingLeft="20dp"
+            app:columnCount="5"
+            app:rowCount="11"
+            app:columnOrderPreserved="false">
+
+            <ImageButton
+                android:id="@+id/a"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:scaleType="centerInside"
+                android:tag="a"
+                android:onClick="sound"
+                android:adjustViewBounds="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/a" />
+
+            <ImageButton
+                android:id="@+id/i"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:scaleType="centerInside"
+                android:tag="i"
+                android:onClick="sound"
+                android:adjustViewBounds="true"
+                app:layout_constraintStart_toEndOf="@+id/a"
+                app:layout_constraintTop_toTopOf="@+id/a"
+                app:srcCompat="@drawable/i" />
+
+            <ImageButton
+                android:id="@+id/u"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:scaleType="centerInside"
+                android:tag="u"
+                android:onClick="sound"
+                android:adjustViewBounds="true"
+                app:layout_constraintStart_toEndOf="@+id/i"
+                app:layout_constraintTop_toTopOf="@+id/i"
+                app:srcCompat="@drawable/u" />
+
+            <ImageButton
+                android:id="@+id/e"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:scaleType="centerInside"
+                android:tag="e"
+                android:onClick="sound"
+                android:adjustViewBounds="true"
+                app:layout_constraintStart_toEndOf="@+id/u"
+                app:layout_constraintTop_toTopOf="@+id/u"
+                app:srcCompat="@drawable/e" />
+
+            <ImageButton
+                android:id="@+id/o"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:scaleType="centerInside"
+                android:tag="o"
+                android:onClick="sound"
+                android:adjustViewBounds="true"
+                app:layout_constraintStart_toEndOf="@+id/e"
+                app:layout_constraintTop_toTopOf="@+id/e"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:srcCompat="@drawable/o" />
+
+            <ImageButton
+                android:id="@+id/ka"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:scaleType="centerInside"
+                android:tag="ka"
+                android:onClick="sound"
+                android:adjustViewBounds="true"
+                app:layout_constraintStart_toStartOf="@+id/a"
+                app:layout_constraintTop_toBottomOf="@+id/a"
+                app:srcCompat="@drawable/ka" />
+
+            <ImageButton
+                android:id="@+id/ki"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:scaleType="centerInside"
+                android:tag="ki"
+                android:onClick="sound"
+                android:adjustViewBounds="true"
+                app:layout_constraintStart_toEndOf="@+id/ka"
+                app:layout_constraintTop_toTopOf="@+id/ka"
+                app:srcCompat="@drawable/ki" />
+
+            <ImageButton
+                android:id="@+id/ku"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_marginStart="1dp"
+                android:scaleType="centerInside"
+                android:tag="ku"
+                android:onClick="sound"
+                android:adjustViewBounds="true"
+                app:layout_constraintStart_toEndOf="@+id/ki"
+                app:layout_constraintTop_toTopOf="@+id/ki"
+                app:srcCompat="@drawable/ku" />
+
+            <ImageButton
+                android:id="@+id/ke"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:scaleType="centerInside"
+                android:tag="ke"
+                android:onClick="sound"
+                android:adjustViewBounds="true"
+                app:layout_constraintStart_toEndOf="@+id/ku"
+                app:layout_constraintTop_toTopOf="@+id/ku"
+                app:srcCompat="@drawable/ke" />
+
+            <ImageButton
+                android:id="@+id/ko"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:scaleType="centerInside"
+                android:tag="ko"
+                android:onClick="sound"
+                android:adjustViewBounds="true"
+                app:layout_constraintStart_toEndOf="@+id/ke"
+                app:layout_constraintTop_toBottomOf="@+id/e"
+                app:srcCompat="@drawable/ko" />
+
+            <ImageButton
+                android:id="@+id/sa"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:scaleType="centerInside"
+                android:tag="sa"
+                android:onClick="sound"
+                android:adjustViewBounds="true"
+                app:layout_constraintStart_toStartOf="@+id/ka"
+                app:layout_constraintTop_toBottomOf="@+id/ka"
+                app:srcCompat="@drawable/sa" />
+
+            <ImageButton
+                android:id="@+id/shi"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:scaleType="centerInside"
+                android:tag="shi"
+                android:onClick="sound"
+                android:adjustViewBounds="true"
+                app:layout_constraintStart_toEndOf="@+id/sa"
+                app:layout_constraintTop_toTopOf="@+id/sa"
+                app:srcCompat="@drawable/shi" />
+
+            <ImageButton
+                android:id="@+id/su"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:scaleType="centerInside"
+                android:tag="su"
+                android:onClick="sound"
+                android:adjustViewBounds="true"
+                app:layout_constraintStart_toEndOf="@+id/shi"
+                app:layout_constraintTop_toTopOf="@+id/shi"
+                app:srcCompat="@drawable/su" />
+
+            <ImageButton
+                android:id="@+id/se"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:scaleType="centerInside"
+                android:tag="se"
+                android:onClick="sound"
+                android:adjustViewBounds="true"
+                app:layout_constraintStart_toEndOf="@+id/su"
+                app:layout_constraintTop_toTopOf="@+id/su"
+                app:srcCompat="@drawable/se" />
+
+            <ImageButton
+                android:id="@+id/so"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:scaleType="centerInside"
+                android:tag="so"
+                android:onClick="sound"
+                android:adjustViewBounds="true"
+                app:layout_constraintStart_toEndOf="@+id/se"
+                app:layout_constraintTop_toTopOf="@+id/se"
+                app:srcCompat="@drawable/so" />
+
+            <ImageButton
+                android:id="@+id/ta"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:scaleType="centerInside"
+                android:tag="te"
+                android:onClick="sound"
+                android:adjustViewBounds="true"
+                app:layout_constraintStart_toStartOf="@+id/sa"
+                app:layout_constraintTop_toBottomOf="@+id/sa"
+                app:srcCompat="@drawable/ta" />
+
+            <ImageButton
+                android:id="@+id/chi"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:scaleType="centerInside"
+                android:tag="chi"
+                android:onClick="sound"
+                android:adjustViewBounds="true"
+                app:layout_constraintStart_toEndOf="@+id/ta"
+                app:layout_constraintTop_toTopOf="@+id/ta"
+                app:srcCompat="@drawable/chi" />
+
+            <ImageButton
+                android:id="@+id/tsu"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:scaleType="centerInside"
+                android:tag="tsu"
+                android:onClick="sound"
+                android:adjustViewBounds="true"
+                app:layout_constraintStart_toEndOf="@+id/chi"
+                app:layout_constraintTop_toTopOf="@+id/chi"
+                app:srcCompat="@drawable/tsu" />
+
+            <ImageButton
+                android:id="@+id/te"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:scaleType="centerInside"
+                android:tag="te"
+                android:onClick="sound"
+                android:adjustViewBounds="true"
+                app:layout_constraintStart_toEndOf="@+id/tsu"
+                app:layout_constraintTop_toTopOf="@+id/tsu"
+                app:srcCompat="@drawable/te" />
+
+            <ImageButton
+                android:id="@+id/to"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:scaleType="centerInside"
+                android:tag="to"
+                android:onClick="sound"
+                android:adjustViewBounds="true"
+                app:layout_constraintStart_toEndOf="@+id/te"
+                app:layout_constraintTop_toTopOf="@+id/te"
+                app:srcCompat="@drawable/to" />
+
+            <ImageButton
+                android:id="@+id/na"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:scaleType="centerInside"
+                android:tag="na"
+                android:onClick="sound"
+                android:adjustViewBounds="true"
+                app:layout_constraintStart_toStartOf="@+id/ta"
+                app:layout_constraintTop_toBottomOf="@+id/ta"
+                app:srcCompat="@drawable/na" />
+
+            <ImageButton
+                android:id="@+id/ni"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:scaleType="centerInside"
+                android:tag="ni"
+                android:onClick="sound"
+                android:adjustViewBounds="true"
+                app:layout_constraintStart_toEndOf="@+id/na"
+                app:layout_constraintTop_toTopOf="@+id/na"
+                app:srcCompat="@drawable/ni" />
+
+            <ImageButton
+                android:id="@+id/nu"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:scaleType="centerInside"
+                android:tag="nu"
+                android:onClick="sound"
+                android:adjustViewBounds="true"
+                app:layout_constraintStart_toEndOf="@+id/ni"
+                app:layout_constraintTop_toTopOf="@+id/ni"
+                app:srcCompat="@drawable/nu" />
+
+            <ImageButton
+                android:id="@+id/ne"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:scaleType="centerInside"
+                android:tag="ne"
+                android:onClick="sound"
+                android:adjustViewBounds="true"
+                app:layout_constraintStart_toEndOf="@+id/nu"
+                app:layout_constraintTop_toTopOf="@+id/nu"
+                app:srcCompat="@drawable/ne" />
+
+            <ImageButton
+                android:id="@+id/no"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:scaleType="centerInside"
+                android:tag="no"
+                android:onClick="sound"
+                android:adjustViewBounds="true"
+                app:layout_constraintStart_toEndOf="@+id/ne"
+                app:layout_constraintTop_toTopOf="@+id/ne"
+                app:srcCompat="@drawable/no" />
+
+            <ImageButton
+                android:id="@+id/ha"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:scaleType="centerInside"
+                android:tag="ha"
+                android:onClick="sound"
+                android:adjustViewBounds="true"
+                app:layout_constraintStart_toStartOf="@+id/na"
+                app:layout_constraintTop_toBottomOf="@+id/na"
+                app:srcCompat="@drawable/ha" />
+
+            <ImageButton
+                android:id="@+id/hi"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:scaleType="centerInside"
+                android:tag="hi"
+                android:onClick="sound"
+                android:adjustViewBounds="true"
+                app:layout_constraintStart_toEndOf="@+id/ha"
+                app:layout_constraintTop_toTopOf="@+id/ha"
+                app:srcCompat="@drawable/hi" />
+
+            <ImageButton
+                android:id="@+id/fu"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:scaleType="centerInside"
+                android:tag="fu"
+                android:onClick="sound"
+                android:adjustViewBounds="true"
+                app:layout_constraintStart_toEndOf="@+id/hi"
+                app:layout_constraintTop_toTopOf="@+id/hi"
+                app:srcCompat="@drawable/fu" />
+
+            <ImageButton
+                android:id="@+id/he"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:scaleType="centerInside"
+                android:tag="he"
+                android:onClick="sound"
+                android:adjustViewBounds="true"
+                app:layout_constraintStart_toEndOf="@+id/fu"
+                app:layout_constraintTop_toTopOf="@+id/fu"
+                app:srcCompat="@drawable/he" />
+
+            <ImageButton
+                android:id="@+id/ho"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:scaleType="centerInside"
+                android:tag="ho"
+                android:onClick="sound"
+                android:adjustViewBounds="true"
+                app:layout_constraintStart_toEndOf="@+id/he"
+                app:layout_constraintTop_toTopOf="@+id/he"
+                app:srcCompat="@drawable/ho" />
+
+            <ImageButton
+                android:id="@+id/ma"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:scaleType="centerInside"
+                android:tag="ma"
+                android:onClick="sound"
+                android:adjustViewBounds="true"
+                app:layout_constraintStart_toStartOf="@+id/ha"
+                app:layout_constraintTop_toBottomOf="@+id/ha"
+                app:srcCompat="@drawable/ma" />
+
+            <ImageButton
+                android:id="@+id/mi"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:scaleType="centerInside"
+                android:tag="mi"
+                android:onClick="sound"
+                android:adjustViewBounds="true"
+                app:layout_constraintStart_toEndOf="@+id/ma"
+                app:layout_constraintTop_toTopOf="@+id/ma"
+                app:srcCompat="@drawable/mi" />
+
+            <ImageButton
+                android:id="@+id/mu"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:scaleType="centerInside"
+                android:tag="mu"
+                android:onClick="sound"
+                android:adjustViewBounds="true"
+                app:layout_constraintStart_toEndOf="@+id/mi"
+                app:layout_constraintTop_toTopOf="@+id/mi"
+                app:srcCompat="@drawable/mu" />
+
+            <ImageButton
+                android:id="@+id/me"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:scaleType="centerInside"
+                android:tag="me"
+                android:onClick="sound"
+                android:adjustViewBounds="true"
+                app:layout_constraintStart_toEndOf="@+id/mu"
+                app:layout_constraintTop_toTopOf="@+id/mu"
+                app:srcCompat="@drawable/me" />
+
+            <ImageButton
+                android:id="@+id/mo"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:scaleType="centerInside"
+                android:tag="mo"
+                android:onClick="sound"
+                android:adjustViewBounds="true"
+                app:layout_constraintStart_toEndOf="@+id/me"
+                app:layout_constraintTop_toTopOf="@+id/me"
+                app:srcCompat="@drawable/mo" />
+
+            <ImageButton
+                android:id="@+id/ya"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:scaleType="centerInside"
+                android:tag="ya"
+                android:onClick="sound"
+                android:adjustViewBounds="true"
+                app:layout_constraintStart_toStartOf="@+id/ma"
+                app:layout_constraintTop_toBottomOf="@+id/ma"
+                app:srcCompat="@drawable/ya" />
+
+            <ImageButton
+                android:id="@+id/blank1"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:onClick="sound"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                app:layout_constraintStart_toStartOf="@+id/mi"
+                app:layout_constraintTop_toBottomOf="@+id/mi"
+                app:srcCompat="@drawable/blank" />
+
+            <ImageButton
+                android:id="@+id/yu"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:scaleType="centerInside"
+                android:tag="yu"
+                android:onClick="sound"
+                android:adjustViewBounds="true"
+                app:layout_constraintStart_toStartOf="@+id/mu"
+                app:layout_constraintTop_toBottomOf="@+id/mu"
+                app:srcCompat="@drawable/yu" />
+
+            <ImageButton
+                android:id="@+id/blank2"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:onClick="sound"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                app:layout_constraintStart_toStartOf="@+id/me"
+                app:layout_constraintTop_toBottomOf="@+id/me"
+                app:srcCompat="@drawable/blank" />
+
+            <ImageButton
+                android:id="@+id/yo"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:scaleType="centerInside"
+                android:tag="yo"
+                android:onClick="sound"
+                android:adjustViewBounds="true"
+                app:layout_constraintStart_toStartOf="@+id/mo"
+                app:layout_constraintTop_toBottomOf="@+id/mo"
+                app:srcCompat="@drawable/yo" />
+
+            <ImageButton
+                android:id="@+id/ra"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:scaleType="centerInside"
+                android:tag="ra"
+                android:onClick="sound"
+                android:adjustViewBounds="true"
+                app:layout_constraintStart_toStartOf="@+id/ya"
+                app:layout_constraintTop_toBottomOf="@+id/ya"
+                app:srcCompat="@drawable/ra" />
+
+            <ImageButton
+                android:id="@+id/ri"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:scaleType="centerInside"
+                android:tag="ri"
+                android:onClick="sound"
+                android:adjustViewBounds="true"
+                app:layout_constraintStart_toEndOf="@+id/ra"
+                app:layout_constraintTop_toTopOf="@+id/ra"
+                app:srcCompat="@drawable/ri" />
+
+            <ImageButton
+                android:id="@+id/ru"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:scaleType="centerInside"
+                android:tag="ru"
+                android:onClick="sound"
+                android:adjustViewBounds="true"
+                app:layout_constraintStart_toEndOf="@+id/ri"
+                app:layout_constraintTop_toTopOf="@+id/ri"
+                app:srcCompat="@drawable/ru" />
+
+            <ImageButton
+                android:id="@+id/re"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:scaleType="centerInside"
+                android:tag="re"
+                android:onClick="sound"
+                android:adjustViewBounds="true"
+                app:layout_constraintStart_toEndOf="@+id/ru"
+                app:layout_constraintTop_toTopOf="@+id/ru"
+                app:srcCompat="@drawable/re" />
+
+            <ImageButton
+                android:id="@+id/ro"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:scaleType="centerInside"
+                android:tag="ro"
+                android:onClick="sound"
+                android:adjustViewBounds="true"
+                app:layout_constraintStart_toEndOf="@+id/re"
+                app:layout_constraintTop_toTopOf="@+id/re"
+                app:srcCompat="@drawable/ro" />
+
+            <ImageButton
+                android:id="@+id/wa"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:scaleType="centerInside"
+                android:tag="wa"
+                android:onClick="sound"
+                android:adjustViewBounds="true"
+                app:layout_constraintStart_toStartOf="@+id/ra"
+                app:layout_constraintTop_toBottomOf="@+id/ra"
+                app:srcCompat="@drawable/wa" />
+
+            <ImageButton
+                android:id="@+id/blank3"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:scaleType="centerInside"
+                android:adjustViewBounds="true"
+                app:layout_constraintStart_toEndOf="@+id/wa"
+                app:layout_constraintTop_toTopOf="@+id/wa"
+                app:srcCompat="@drawable/blank" />
+
+            <ImageButton
+                android:id="@+id/blank4"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                app:layout_constraintStart_toEndOf="@+id/blank3"
+                app:layout_constraintTop_toTopOf="@+id/blank3"
+                app:srcCompat="@drawable/blank" />
+            <ImageButton
+                android:id="@+id/blank5"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                app:layout_constraintStart_toEndOf="@+id/blank4"
+                app:layout_constraintTop_toTopOf="@+id/blank4"
+                app:srcCompat="@drawable/blank" />
+
+            <ImageButton
+                android:id="@+id/wo"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:scaleType="centerInside"
+                android:tag="wo"
+                android:onClick="sound"
+                android:adjustViewBounds="true"
+                app:layout_constraintStart_toStartOf="@+id/ro"
+                app:layout_constraintTop_toBottomOf="@+id/ro"
+                app:srcCompat="@drawable/wo" />
+
+            <ImageButton
+                android:id="@+id/n"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:adjustViewBounds="true"
+                android:onClick="sound"
+                android:scaleType="centerInside"
+                android:tag="n"
+                app:layout_constraintStart_toStartOf="@+id/wa"
+                app:layout_constraintTop_toBottomOf="@+id/wa"
+                app:srcCompat="@drawable/n" />
+
+            <ImageButton
+                android:id="@+id/blank6"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:scaleType="centerInside"
+                android:adjustViewBounds="true"
+                app:layout_constraintStart_toEndOf="@+id/n"
+                app:layout_constraintTop_toTopOf="@+id/n"
+                app:srcCompat="@drawable/blank" />
+
+            <ImageButton
+                android:id="@+id/blank7"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:scaleType="centerInside"
+                android:adjustViewBounds="true"
+                app:layout_constraintStart_toEndOf="@+id/blank6"
+                app:layout_constraintTop_toTopOf="@+id/blank6"
+                app:srcCompat="@drawable/blank" />
+
+            <ImageButton
+                android:id="@+id/blank8"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:scaleType="centerInside"
+                android:adjustViewBounds="true"
+                app:layout_constraintStart_toEndOf="@+id/blank7"
+                app:layout_constraintTop_toTopOf="@+id/blank7"
+                app:srcCompat="@drawable/blank" />
+
+            <ImageButton
+                android:id="@+id/blank9"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:scaleType="centerInside"
+                android:adjustViewBounds="true"
+                app:layout_constraintStart_toEndOf="@+id/blank8"
+                app:layout_constraintTop_toTopOf="@+id/blank8"
+                app:srcCompat="@drawable/blank" />
+        </androidx.gridlayout.widget.GridLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/Kata"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Katakana"
+        android:textColor="#C81552"
+        android:textSize="34sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.458"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/viewKata"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Kata"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintVertical_bias="0.75"
+        android:visibility="gone">
+
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/layoutKata"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="20dp"
+        app:rowCount="11"
+        app:columnCount="5"
+        app:columnOrderPreserved="false"
+        app:alignmentMode="alignMargins">
+
+    <ImageButton
+        android:id="@+id/a1"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:scaleType="centerInside"
+        android:tag="a"
+        android:onClick="sound"
+        android:adjustViewBounds="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/a1" />
+
+    <ImageButton
+        android:id="@+id/i1"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:scaleType="centerInside"
+        android:tag="i"
+        android:onClick="sound"
+        android:adjustViewBounds="true"
+        app:layout_constraintStart_toEndOf="@+id/a1"
+        app:layout_constraintTop_toTopOf="@+id/a1"
+        app:srcCompat="@drawable/i1" />
+
+    <ImageButton
+        android:id="@+id/u1"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:scaleType="centerInside"
+        android:tag="u"
+        android:onClick="sound"
+        android:adjustViewBounds="true"
+        app:layout_constraintStart_toEndOf="@+id/i1"
+        app:layout_constraintTop_toTopOf="@+id/i1"
+        app:srcCompat="@drawable/u1" />
+
+    <ImageButton
+        android:id="@+id/e1"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:scaleType="centerInside"
+        android:tag="e"
+        android:onClick="sound"
+        android:adjustViewBounds="true"
+        app:layout_constraintStart_toEndOf="@+id/u1"
+        app:layout_constraintTop_toTopOf="@+id/u1"
+        app:srcCompat="@drawable/e1" />
+
+    <ImageButton
+        android:id="@+id/o1"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:scaleType="centerInside"
+        android:tag="o"
+        android:onClick="sound"
+        android:adjustViewBounds="true"
+        app:layout_constraintStart_toEndOf="@+id/e1"
+        app:layout_constraintTop_toTopOf="@+id/e1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:srcCompat="@drawable/o1" />
+
+    <ImageButton
+        android:id="@+id/ka1"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:scaleType="centerInside"
+        android:tag="ka"
+        android:onClick="sound"
+        android:adjustViewBounds="true"
+        app:layout_constraintStart_toStartOf="@+id/a1"
+        app:layout_constraintTop_toBottomOf="@+id/a1"
+        app:srcCompat="@drawable/ka1" />
+
+    <ImageButton
+        android:id="@+id/ki1"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:scaleType="centerInside"
+        android:tag="ki"
+        android:onClick="sound"
+        android:adjustViewBounds="true"
+        app:layout_constraintStart_toEndOf="@+id/ka1"
+        app:layout_constraintTop_toTopOf="@+id/ka1"
+        app:srcCompat="@drawable/ki1" />
+
+    <ImageButton
+        android:id="@+id/ku1"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="1dp"
+        android:scaleType="centerInside"
+        android:tag="ku"
+        android:onClick="sound"
+        android:adjustViewBounds="true"
+        app:layout_constraintStart_toEndOf="@+id/ki1"
+        app:layout_constraintTop_toTopOf="@+id/ki1"
+        app:srcCompat="@drawable/ku1" />
+
+    <ImageButton
+        android:id="@+id/ke1"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:scaleType="centerInside"
+        android:tag="ke"
+        android:onClick="sound"
+        android:adjustViewBounds="true"
+        app:layout_constraintStart_toEndOf="@+id/ku1"
+        app:layout_constraintTop_toTopOf="@+id/ku1"
+        app:srcCompat="@drawable/ke1" />
+
+    <ImageButton
+        android:id="@+id/ko1"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:scaleType="centerInside"
+        android:tag="ko"
+        android:onClick="sound"
+        android:adjustViewBounds="true"
+        app:layout_constraintStart_toEndOf="@+id/ke1"
+        app:layout_constraintTop_toBottomOf="@+id/e1"
+        app:srcCompat="@drawable/ko1" />
+
+
+    <ImageButton
+        android:id="@+id/sa1"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:scaleType="centerInside"
+        android:tag="sa"
+        android:onClick="sound"
+        android:adjustViewBounds="true"
+        app:layout_constraintStart_toStartOf="@+id/ka1"
+        app:layout_constraintTop_toBottomOf="@+id/ka1"
+        app:srcCompat="@drawable/sa1" />
+
+    <ImageButton
+        android:id="@+id/shi1"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:scaleType="centerInside"
+        android:tag="shi"
+        android:onClick="sound"
+        android:adjustViewBounds="true"
+        app:layout_constraintStart_toEndOf="@+id/sa1"
+        app:layout_constraintTop_toTopOf="@+id/sa1"
+        app:srcCompat="@drawable/shi1" />
+
+    <ImageButton
+        android:id="@+id/su1"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:scaleType="centerInside"
+        android:tag="su"
+        android:onClick="sound"
+        android:adjustViewBounds="true"
+        app:layout_constraintStart_toEndOf="@+id/shi1"
+        app:layout_constraintTop_toTopOf="@+id/shi1"
+        app:srcCompat="@drawable/su1" />
+
+    <ImageButton
+        android:id="@+id/se1"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:scaleType="centerInside"
+        android:tag="se"
+        android:onClick="sound"
+        android:adjustViewBounds="true"
+        app:layout_constraintStart_toEndOf="@+id/su1"
+        app:layout_constraintTop_toTopOf="@+id/su1"
+        app:srcCompat="@drawable/se1" />
+
+    <ImageButton
+        android:id="@+id/so1"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:onClick="sound"
+        android:tag="so"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        app:layout_constraintStart_toEndOf="@+id/se1"
+        app:layout_constraintTop_toTopOf="@+id/se1"
+        app:srcCompat="@drawable/so1" />
+
+    <ImageButton
+        android:id="@+id/ta1"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:adjustViewBounds="true"
+        android:tag="ta"
+        android:onClick="sound"
+        android:scaleType="centerInside"
+        app:layout_constraintStart_toStartOf="@+id/sa1"
+        app:layout_constraintTop_toBottomOf="@+id/sa1"
+        app:srcCompat="@drawable/ta1" />
+
+    <ImageButton
+        android:id="@+id/chi1"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:adjustViewBounds="true"
+        android:tag="chi"
+        android:onClick="sound"
+        android:scaleType="centerInside"
+        app:layout_constraintStart_toEndOf="@+id/ta1"
+        app:layout_constraintTop_toTopOf="@+id/ta1"
+        app:srcCompat="@drawable/chi1" />
+
+    <ImageButton
+        android:id="@+id/tsu1"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:adjustViewBounds="true"
+        android:tag="tsu"
+        android:onClick="sound"
+        android:scaleType="centerInside"
+        app:layout_constraintStart_toEndOf="@+id/chi1"
+        app:layout_constraintTop_toTopOf="@+id/chi1"
+        app:srcCompat="@drawable/tsu1" />
+
+    <ImageButton
+        android:id="@+id/te1"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:scaleType="centerInside"
+        android:tag="te"
+        android:onClick="sound"
+        android:adjustViewBounds="true"
+        app:layout_constraintStart_toEndOf="@+id/tsu1"
+        app:layout_constraintTop_toTopOf="@+id/tsu1"
+        app:srcCompat="@drawable/te1" />
+
+    <ImageButton
+        android:id="@+id/to1"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:scaleType="centerInside"
+        android:tag="to"
+        android:onClick="sound"
+        android:adjustViewBounds="true"
+        app:layout_constraintStart_toEndOf="@+id/te1"
+        app:layout_constraintTop_toTopOf="@+id/te1"
+        app:srcCompat="@drawable/to1" />
+
+    <ImageButton
+        android:id="@+id/na1"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:scaleType="centerInside"
+        android:tag="na"
+        android:onClick="sound"
+        android:adjustViewBounds="true"
+        app:layout_constraintStart_toStartOf="@+id/ta1"
+        app:layout_constraintTop_toBottomOf="@+id/ta1"
+        app:srcCompat="@drawable/na1" />
+
+    <ImageButton
+        android:id="@+id/ni1"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:scaleType="centerInside"
+        android:tag="ni"
+        android:onClick="sound"
+        android:adjustViewBounds="true"
+        app:layout_constraintStart_toEndOf="@+id/na1"
+        app:layout_constraintTop_toTopOf="@+id/na1"
+        app:srcCompat="@drawable/ni1" />
+
+    <ImageButton
+        android:id="@+id/nu1"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:scaleType="centerInside"
+        android:tag="nu"
+        android:onClick="sound"
+        android:adjustViewBounds="true"
+        app:layout_constraintStart_toEndOf="@+id/ni1"
+        app:layout_constraintTop_toTopOf="@+id/ni1"
+        app:srcCompat="@drawable/nu1" />
+
+    <ImageButton
+        android:id="@+id/ne1"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:scaleType="centerInside"
+        android:tag="ne"
+        android:onClick="sound"
+        android:adjustViewBounds="true"
+        app:layout_constraintStart_toEndOf="@+id/nu1"
+        app:layout_constraintTop_toTopOf="@+id/nu1"
+        app:srcCompat="@drawable/ne1" />
+
+    <ImageButton
+        android:id="@+id/no1"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:scaleType="centerInside"
+        android:tag="no"
+        android:onClick="sound"
+        android:adjustViewBounds="true"
+        app:layout_constraintStart_toEndOf="@+id/ne1"
+        app:layout_constraintTop_toTopOf="@+id/ne1"
+        app:srcCompat="@drawable/no1" />
+
+    <ImageButton
+        android:id="@+id/ha1"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:adjustViewBounds="true"
+        android:tag="ha"
+        android:onClick="sound"
+        android:scaleType="centerInside"
+        app:layout_constraintStart_toStartOf="@+id/na1"
+        app:layout_constraintTop_toBottomOf="@+id/na1"
+        app:srcCompat="@drawable/ha1" />
+
+    <ImageButton
+        android:id="@+id/hi1"
+        android:tag="hi"
+        android:onClick="sound"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        app:layout_constraintStart_toEndOf="@+id/ha1"
+        app:layout_constraintTop_toTopOf="@+id/ha1"
+        app:srcCompat="@drawable/hi1" />
+
+    <ImageButton
+        android:id="@+id/fu1"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:scaleType="centerInside"
+        android:tag="fu"
+        android:onClick="sound"
+        android:adjustViewBounds="true"
+        app:layout_constraintStart_toEndOf="@+id/hi1"
+        app:layout_constraintTop_toTopOf="@+id/hi1"
+        app:srcCompat="@drawable/fu1" />
+
+    <ImageButton
+        android:id="@+id/he1"
+        android:adjustViewBounds="true"
+        android:tag="he"
+        android:onClick="sound"
+        android:scaleType="centerInside"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        app:layout_constraintStart_toEndOf="@+id/fu1"
+        app:layout_constraintTop_toTopOf="@+id/fu1"
+        app:srcCompat="@drawable/he1" />
+
+    <ImageButton
+        android:id="@+id/ho1"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        android:onClick="sound"
+        android:tag="ho"
+        app:layout_constraintStart_toEndOf="@+id/he1"
+        app:layout_constraintTop_toTopOf="@+id/he1"
+        app:srcCompat="@drawable/ho1" />
+
+    <ImageButton
+        android:id="@+id/ma1"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:tag="ma"
+        android:onClick="sound"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        app:layout_constraintStart_toStartOf="@+id/ha1"
+        app:layout_constraintTop_toBottomOf="@+id/ha1"
+        app:srcCompat="@drawable/ma1" />
+
+    <ImageButton
+        android:id="@+id/mi1"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:tag="mi"
+        android:onClick="sound"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        app:layout_constraintStart_toEndOf="@+id/ma1"
+        app:layout_constraintTop_toTopOf="@+id/ma1"
+        app:srcCompat="@drawable/mi1" />
+
+    <ImageButton
+        android:id="@+id/mu1"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:tag="mu"
+        android:onClick="sound"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        app:layout_constraintStart_toEndOf="@+id/mi1"
+        app:layout_constraintTop_toTopOf="@+id/mi1"
+        app:srcCompat="@drawable/mu1" />
+
+    <ImageButton
+        android:id="@+id/me1"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        android:tag="me"
+        android:onClick="sound"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        app:layout_constraintStart_toEndOf="@+id/mu1"
+        app:layout_constraintTop_toTopOf="@+id/mu1"
+        app:srcCompat="@drawable/me1" />
+
+    <ImageButton
+        android:id="@+id/mo1"
+        android:tag="mo"
+        android:onClick="sound"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        app:layout_constraintStart_toEndOf="@+id/me1"
+        app:layout_constraintTop_toTopOf="@+id/me1"
+        app:srcCompat="@drawable/mo1" />
+
+    <ImageButton
+        android:id="@+id/ya1"
+        android:tag="ya"
+        android:onClick="sound"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        app:layout_constraintStart_toStartOf="@+id/ma1"
+        app:layout_constraintTop_toBottomOf="@+id/ma1"
+        app:srcCompat="@drawable/ya1" />
+
+        <ImageButton
+            android:id="@+id/blank11"
+            android:onClick="sound"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            app:layout_constraintStart_toStartOf="@+id/mi1"
+            app:layout_constraintTop_toBottomOf="@+id/mi1"
+            app:srcCompat="@drawable/blank" />
+
+        <ImageButton
+            android:id="@+id/yu1"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:scaleType="centerInside"
+            android:tag="yu"
+            android:onClick="sound"
+            android:adjustViewBounds="true"
+            app:layout_constraintStart_toStartOf="@+id/mu1"
+            app:layout_constraintTop_toBottomOf="@+id/mu1"
+            app:srcCompat="@drawable/yu" />
+
+        <ImageButton
+            android:id="@+id/blank21"
+            android:adjustViewBounds="true"
+            android:onClick="sound"
+            android:scaleType="centerInside"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            app:layout_constraintStart_toStartOf="@+id/me1"
+            app:layout_constraintTop_toBottomOf="@+id/me1"
+            app:srcCompat="@drawable/blank" />
+
+        <ImageButton
+            android:id="@+id/yo1"
+            android:adjustViewBounds="true"
+            android:tag="yo"
+            android:onClick="sound"
+            android:scaleType="centerInside"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            app:layout_constraintStart_toStartOf="@+id/mo1"
+            app:layout_constraintTop_toBottomOf="@+id/mo1"
+            app:srcCompat="@drawable/yo" />
+
+        <ImageButton
+            android:id="@+id/ra1"
+            android:adjustViewBounds="true"
+            android:tag="ra"
+            android:onClick="sound"
+            android:scaleType="centerInside"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            app:layout_constraintStart_toStartOf="@+id/ya1"
+            app:layout_constraintTop_toBottomOf="@+id/ya1"
+            app:srcCompat="@drawable/ra" />
+
+        <ImageButton
+            android:id="@+id/ri1"
+            android:adjustViewBounds="true"
+            android:tag="ri"
+            android:onClick="sound"
+            android:scaleType="centerInside"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            app:layout_constraintStart_toEndOf="@+id/ra1"
+            app:layout_constraintTop_toTopOf="@+id/ra1"
+            app:srcCompat="@drawable/ri" />
+
+        <ImageButton
+            android:id="@+id/ru1"
+            android:adjustViewBounds="true"
+            android:tag="ru"
+            android:onClick="sound"
+            android:scaleType="centerInside"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            app:layout_constraintStart_toEndOf="@+id/ri1"
+            app:layout_constraintTop_toTopOf="@+id/ri1"
+            app:srcCompat="@drawable/ru" />
+
+        <ImageButton
+            android:id="@+id/re1"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:tag="re"
+            android:onClick="sound"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
+            app:layout_constraintStart_toEndOf="@+id/ru1"
+            app:layout_constraintTop_toTopOf="@+id/ru1"
+            app:srcCompat="@drawable/re" />
+
+        <ImageButton
+            android:id="@+id/ro1"
+            android:adjustViewBounds="true"
+            android:tag="ro"
+            android:onClick="sound"
+            android:scaleType="centerInside"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            app:layout_constraintStart_toEndOf="@+id/re1"
+            app:layout_constraintTop_toTopOf="@+id/re1"
+            app:srcCompat="@drawable/ro" />
+
+        <ImageButton
+            android:id="@+id/wa1"
+            android:adjustViewBounds="true"
+            android:tag="wa"
+            android:onClick="sound"
+            android:scaleType="centerInside"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            app:layout_constraintStart_toStartOf="@+id/ra1"
+            app:layout_constraintTop_toBottomOf="@+id/ra1"
+            app:srcCompat="@drawable/wa" />
+
+        <ImageButton
+            android:id="@+id/blank31"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            app:layout_constraintStart_toEndOf="@+id/wa1"
+            app:layout_constraintTop_toTopOf="@+id/wa1"
+            app:srcCompat="@drawable/blank" />
+
+        <ImageButton
+            android:id="@+id/blank41"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside"
+            app:layout_constraintStart_toEndOf="@+id/blank31"
+            app:layout_constraintTop_toTopOf="@+id/blank31"
+            app:srcCompat="@drawable/blank" />
+
+        <ImageButton
+            android:id="@+id/blank51"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
+            app:layout_constraintStart_toEndOf="@+id/blank41"
+            app:layout_constraintTop_toTopOf="@+id/blank41"
+            app:srcCompat="@drawable/blank" />
+
+        <ImageButton
+            android:id="@+id/wo1"
+            android:adjustViewBounds="true"
+            android:tag="wo"
+            android:onClick="sound"
+            android:scaleType="centerInside"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            app:layout_constraintStart_toStartOf="@+id/ro1"
+            app:layout_constraintTop_toBottomOf="@+id/ro1"
+            app:srcCompat="@drawable/wo" />
+
+        <ImageButton
+            android:id="@+id/n1"
+            android:adjustViewBounds="true"
+            android:tag="n"
+            android:onClick="sound"
+            android:scaleType="centerInside"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            app:layout_constraintStart_toStartOf="@+id/wa1"
+            app:layout_constraintTop_toBottomOf="@+id/wa1"
+            app:srcCompat="@drawable/n" />
+
+        <ImageButton
+            android:id="@+id/blank61"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            app:layout_constraintStart_toEndOf="@+id/n1"
+            app:layout_constraintTop_toTopOf="@+id/n1"
+            app:srcCompat="@drawable/blank" />
+
+        <ImageButton
+            android:id="@+id/blank71"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            app:layout_constraintStart_toEndOf="@+id/blank61"
+            app:layout_constraintTop_toTopOf="@+id/blank61"
+            app:srcCompat="@drawable/blank" />
+
+        <ImageButton
+            android:id="@+id/blank81"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            app:layout_constraintStart_toEndOf="@+id/blank71"
+            app:layout_constraintTop_toTopOf="@+id/blank71"
+            app:srcCompat="@drawable/blank" />
+
+        <ImageButton
+            android:id="@+id/blank91"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside"
+            app:layout_constraintStart_toEndOf="@+id/blank81"
+            app:layout_constraintTop_toTopOf="@+id/blank81"
+            app:srcCompat="@drawable/blank" />
+
+    </androidx.gridlayout.widget.GridLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
